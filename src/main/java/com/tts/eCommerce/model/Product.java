@@ -131,7 +131,7 @@ public class Product {
 		this.updatedAt = updatedAt;
 	}
 
-	public Long setId() {
+	public Long getId() {
 		return id;
 	}
 
