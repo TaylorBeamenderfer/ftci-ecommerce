@@ -19,7 +19,6 @@ public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "product_id")
-	
 	private Long id;
 	
 	@NotBlank(message = "Product name cannot be blank") //what is being sold?
