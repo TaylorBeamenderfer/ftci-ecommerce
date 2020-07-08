@@ -32,6 +32,9 @@ public class Product {
 
 	  @NotBlank(message = "Product brand cannot be blank") //somebody made it, right?
 	  private String brand;
+	  
+	  @NotBlank(message = "Product category cannot be blank")
+	  private String category;
 
 	  private String description; //is it ok to create a product and add a description later? or not?
 	  private Integer inventory; //negative inventory doesn't really make sense, can't sell it if it isn't there 
@@ -46,12 +49,13 @@ public class Product {
 	  
 	  public Product () {}
 
-	public Product(String name, Double wholesalePrice, Double retailPrice, String brand, String description,
+	public Product(String name, Double wholesalePrice, Double retailPrice, String brand, String category, String description,
 			Integer inventory, String image, Date createdAt, Date updatedAt) {
 		this.name = name;
 		this.wholesalePrice = wholesalePrice;
 		this.retailPrice = retailPrice;
 		this.brand = brand;
+		this.category = category;
 		this.description = description;
 		this.inventory = inventory;
 		this.image = image;
@@ -89,6 +93,14 @@ public class Product {
 
 	public void setBrand(String brand) {
 		this.brand = brand;
+	}
+	
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	public String getDescription() {
@@ -138,8 +150,9 @@ public class Product {
 	@Override
 	public String toString() {
 		return "Product [id=" + id + ", name=" + name + ", wholesalePrice=" + wholesalePrice + ", retailPrice="
-				+ retailPrice + ", brand=" + brand + ", description=" + description + ", inventory=" + inventory
-				+ ", image=" + image + "]";
+				+ retailPrice + ", brand=" + brand + ", category=" + category + ", description=" + description
+				+ ", inventory=" + inventory + ", image=" + image + ", createdAt=" + createdAt + ", updatedAt="
+				+ updatedAt + "]";
 	}
 	  
 	  
